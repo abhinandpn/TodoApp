@@ -10,6 +10,7 @@ import (
 var Tmpl *template.Template
 
 func Todo(w http.ResponseWriter, r *http.Request) {
+
 	if Tmpl != nil {
 		data := util.PageData{
 			Title: "Todo List",
@@ -24,4 +25,5 @@ func Todo(w http.ResponseWriter, r *http.Request) {
 	} else {
 		http.Error(w, "Template not initialized", http.StatusInternalServerError)
 	}
+
 }
