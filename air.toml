@@ -1,0 +1,17 @@
+# air.toml
+root = "."
+tmp_dir = "tmp"
+build_dir = "build"
+
+[build]
+  bin = "main"
+  exclude_dir = ["vendor", "tmp", "build"]
+
+[[build.watch]]
+  paths = ["."]
+  exclude_paths = []
+  include_exts = ["go"]
+  exclude_exts = ["exe"]
+
+[log]
+  log = "info"
