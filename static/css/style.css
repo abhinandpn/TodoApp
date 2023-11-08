@@ -1,8 +1,9 @@
 body {
-    background-color: aqua;
+    background-color: rgb(64, 120, 252);
     color: black;
     width: 50%;
     margin: 0 auto;
+    font-size: 25px;
 }
  ul li{
     cursor: pointer;

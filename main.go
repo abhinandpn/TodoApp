@@ -20,9 +20,14 @@ func main() {
 	}
 
 	// List files in the templates directory
-	Todo.FilePass()
+	err := Todo.FilePass()
+	if err != nil {
+		log.Fatalf("Error occurred while parsing templates: %v", err)
+	}
+
 	fs := http.FileServer(http.Dir("./static"))
 	mux.Handle("/static/", http.StripPrefix("/static/", fs))
+	
 	mux.HandleFunc("/todo", Todo.Todo)
 	log.Fatal(http.ListenAndServe(":8080", mux))
 }
